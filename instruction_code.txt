@@ -1,0 +1,131 @@
+# =========================
+# GIT REFERENCE GUIDE
+# =========================
+# This is a complete reference for common Git commands
+# from initializing a repository to pushing/pulling changes.
+
+# -------------------------
+# 1. Check Git installation
+# -------------------------
+git --version
+
+# -------------------------
+# 2. Configure Git (one-time setup)
+# -------------------------
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+
+# -------------------------
+# 3. Initialize a new repository
+# -------------------------
+git init
+# Optional: rename default branch to main
+git branch -m main
+
+# -------------------------
+# 4. Check repository status
+# -------------------------
+git status
+
+# -------------------------
+# 5. Add files to staging
+# -------------------------
+# Add all changes
+git add .
+# Add specific file
+git add filename.py
+
+# -------------------------
+# 6. Commit changes
+# -------------------------
+git commit -m "Describe your changes"
+
+# -------------------------
+# 7. Add remote repository (GitHub)
+# -------------------------
+git remote add origin git@github.com:username/repo.git
+git remote -v  # verify remote URL
+
+# -------------------------
+# 8. Push changes to remote
+# -------------------------
+# First push for main branch
+git push -u origin main
+# Subsequent pushes
+git push
+
+# -------------------------
+# 9. Pull changes from remote
+# -------------------------
+git pull
+# Pull specific branch
+git pull origin branch-name
+
+# -------------------------
+# 10. Branching
+# -------------------------
+# List branches
+git branch
+# List all branches (local + remote)
+git branch -a
+# Create a new branch
+git branch feature-branch
+# Switch to a branch
+git switch feature-branch
+# Older command
+git checkout feature-branch
+# Merge a branch into current branch
+git merge feature-branch
+# Delete a branch locally
+git branch -d feature-branch
+# Force delete unmerged branch
+git branch -D feature-branch
+# Push a branch to remote
+git push -u origin feature-branch
+
+# -------------------------
+# 11. Undo mistakes
+# -------------------------
+# Discard changes in a file
+git restore filename.py
+# Reset staged files
+git reset filename.py
+# Undo last commit but keep changes
+git reset --soft HEAD~1
+# Revert a commit by creating a new commit
+git revert commit-hash
+
+# -------------------------
+# 12. Stashing changes
+# -------------------------
+# Save uncommitted changes temporarily
+git stash
+# Apply stash and remove it
+git stash pop
+# List stashes
+git stash list
+
+# -------------------------
+# 13. Viewing history
+# -------------------------
+git log
+git log --oneline --graph --all
+
+# -------------------------
+# 14. Cloning existing repository
+# -------------------------
+# Clone to current folder
+git clone git@github.com:username/repo.git
+# Clone HTTPS
+git clone https://github.com/username/repo.git
+# Clone and switch to a specific branch
+git clone -b branch-name git@github.com:username/repo.git
+
+# -------------------------
+# 15. Pull request workflow (GitHub)
+# -------------------------
+# 1. Create branch locally
+# 2. Work, add, commit
+# 3. Push branch to remote
+# 4. Open Pull Request on GitHub
+# 5. Merge PR when ready
