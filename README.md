@@ -1,4 +1,4 @@
-We will learn the first steps to work with git : 
+##We will learn the first steps to work with git : 
 
 ✅ 1. Check if Git is installed
 git --version
